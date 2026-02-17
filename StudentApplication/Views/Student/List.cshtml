@@ -1,0 +1,29 @@
+﻿@model IEnumerable<StudentApplication.Models.Student>
+
+<h2>Student Management System</h2>
+
+<a asp-action="Create" class="btn btn-primary" style="margin-bottom: 15px; display:inline-block; padding: 8px 15px; background-color: #007bff; color: white; text-decoration:none; border-radius: 4px;">Add New Student</a>
+
+<table border="1" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+    <tr style="background-color: #f2f2f2;">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Age</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.FullName</td>
+            <td>@student.Email</td>
+            <td>@student.Course</td>
+            <td>@student.Age</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

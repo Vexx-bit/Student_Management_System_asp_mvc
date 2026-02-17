@@ -1,0 +1,15 @@
+﻿@model StudentApplication.Models.Student
+
+<h2 style="color: red;">Are you sure you want to delete this student?</h2>
+
+<div style="background-color: #ffe6e6; padding: 15px; border: 1px solid red; max-width: 400px; margin-bottom: 15px;">
+    <p><strong>Name:</strong> @Model.FullName</p>
+    <p><strong>Course:</strong> @Model.Course</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" style="padding: 8px 15px; background-color: #dc3545; color: white; border: none; cursor: pointer;">Yes, Delete</button>
+    <a asp-action="List" style="margin-left: 10px;">Cancel</a>
+</form>

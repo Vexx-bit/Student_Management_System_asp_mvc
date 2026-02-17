@@ -1,0 +1,29 @@
+﻿@model StudentApplication.Models.Student
+
+<h2>Edit Student</h2>
+
+<form asp-action="Edit" method="post" style="max-width: 400px;">
+    <input type="hidden" asp-for="Id" />
+    <div style="margin-bottom: 10px;">
+        <label>Full Name</label><br />
+        <input asp-for="FullName" required style="width: 100%;" />
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        <label>Email</label><br />
+        <input asp-for="Email" type="email" required style="width: 100%;" />
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        <label>Course</label><br />
+        <input asp-for="Course" required style="width: 100%;" />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label>Age</label><br />
+        <input asp-for="Age" type="number" required style="width: 100%;" />
+    </div>
+
+    <button type="submit" style="padding: 8px 15px; background-color: #28a745; color: white; border: none; cursor: pointer;">Save Student</button>
+    <a asp-action="List" style="margin-left: 10px;">Cancel</a>
+</form>
